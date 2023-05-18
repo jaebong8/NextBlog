@@ -1,20 +1,28 @@
 import Avatar from "./components/Avatar";
+import { getPosts } from "./service/posts";
+import Post from "./components/Post";
+import Carousels from "./components/Carousels";
 
-import fs from "fs";
-import Markdown from "./components/Markdown";
-
-export default function Home() {
-    const fileContent = fs.readFileSync("data/markdowns/1.md", "utf-8");
+export default async function Home() {
+    const postList = await getPosts();
 
     return (
-        <main>
+        <>
             <Avatar />
-            <section className="mt-4 px-8">
-                <p>Featured Posts</p>
-                <div>
-                    <Markdown file={fileContent} />
+            <section className="mt-4 px-20">
+                <p className="font-bold text-lg">Featured Posts</p>
+                <div className="grid grid-cols-3 auto-rows-[minmax(50vh,1fr)] gap-4">
+                    {postList.map((post) => {
+                        return <Post post={post} key={post.id} />;
+                    })}
                 </div>
             </section>
-        </main>
+            <section className="px-20 py-20">
+                <p className="font-bold text-lg">You may like</p>
+                <div className="relative">
+                    <Carousels postList={postList} />
+                </div>
+            </section>
+        </>
     );
 }

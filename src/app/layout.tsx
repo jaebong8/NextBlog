@@ -33,7 +33,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         </li>
                     </ul>
                 </nav>
-                {children}
+                <main>{children}</main>
+
+                <footer className="h-10 bg-black text-white flex justify-center items-center mt-2">
+                    All Right Reserved.
+                </footer>
             </body>
         </html>
     );
