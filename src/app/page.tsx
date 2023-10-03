@@ -1,7 +1,7 @@
-import Avatar from "./components/Avatar";
+import Avatar from "@/components/Avatar";
 import { getPosts } from "./service/posts";
-import Post from "./components/Post";
-import Carousels from "./components/Carousels";
+import Post from "@/components/Post";
+import Carousels from "@/components/Carousels";
 
 export default async function Home() {
     const postList = await getPosts();
@@ -13,7 +13,7 @@ export default async function Home() {
                 <p className="font-bold text-lg">Featured Posts</p>
                 <div className="grid grid-cols-3 auto-rows-[minmax(50vh,1fr)] gap-4">
                     {postList.map((post) => {
-                        return <Post post={post} key={post.id} />;
+                        return <Post post={post} key={post.id} />
                     })}
                 </div>
             </section>

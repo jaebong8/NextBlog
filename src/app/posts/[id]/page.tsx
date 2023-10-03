@@ -1,7 +1,7 @@
 import { getPost } from "@/app/service/posts";
 import React from "react";
 import fs from "fs";
-import Markdown from "@/app/components/Markdown";
+import Markdown from "@/components/Markdown";
 import Image from "next/image";
 import { AiFillCalendar } from "react-icons/ai";
 
