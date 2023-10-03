@@ -8,7 +8,7 @@ export default function Avatar() {
             <div className="text-center">
                 <h2 className="text-2xl font-bold">Hi, I'm Jaehyun</h2>
                 <p>Front Engineer</p>
-                <p className="text-sm">꿈을 코딩하는 드림코더</p>
+                <p className="text-sm">꿈을 코딩하자</p>
             </div>
             <Link href="/contact" className="bg-amber-500 py-1 px-4 rounded-xl">
                 Contact Me

@@ -28,3 +28,13 @@ export default async function PostDetailPage({ params }: { params: { id: string 
         </section>
     );
 }
+
+
+
+// SSG rendering
+export function generateStaticParams() {
+    const posts = ["1","2","3"];
+    return posts.map((post)=>({
+        id: post
+    }))
+}
