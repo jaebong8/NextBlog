@@ -15,7 +15,7 @@ export default async function Home() {
                     {postList.map((post) => {
                         return <Post post={post} key={post.id} />
                     })}
-                </div>
+                </div> 
             </section>
             <section className="px-20 py-20">
                 <p className="font-bold text-lg">You may like</p>

@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body className={`${roboto.className}`}>
                 <nav className="flex justify-between h-20 items-center p-5">
                     <h1 className="text-xl font-bold">
-                        <Link href="/">JaeHyun's Blog</Link>
+                        <Link href="/">JaeHyuns Blog</Link>
                     </h1>
                     <ul className="flex gap-4">
                         <li>
