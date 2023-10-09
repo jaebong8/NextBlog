@@ -5,12 +5,16 @@ import Markdown from "@/components/Markdown";
 import Image from "next/image";
 import { AiFillCalendar } from "react-icons/ai";
 import MeowArticle from "@/components/MeowArticle";
+import { redirect } from "next/navigation";
 
 export const revalidate = 3;  // ISR : 3초마다 리렌더링
 
 export default async function PostDetailPage({ params }: { params: { id: string } }) {
     const post = await getPost(params.id);
     const fileContent = fs.readFileSync(`data/markdowns/${params.id}.md`, "utf-8");
+    if(!post) {
+        redirect("/posts")
+    }
     // const res = await fetch('https://meowfacts.herokuapp.com',{
     //     next: {revalidate:10}, // ISR 설정
     //     // cache:"no-store" SSR과 같음
