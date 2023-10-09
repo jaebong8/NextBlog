@@ -16,6 +16,14 @@ const nextConfig = {
                 permanent: false,
             }
         ]
+    },
+    async rewrites() {
+        return [
+            {
+                source:"/p/:id",
+                destination:"/posts/:id",
+            },
+        ]
     }
 };
 
