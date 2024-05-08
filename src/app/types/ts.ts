@@ -1,8 +1,8 @@
 export type PostType = {
-    id:string;
-    title:string;
-    desc:string;
-    image:string;
-    createdAt:string;
-    tag:string
-}
+  id: number;
+  title: string;
+  desc: string;
+  image: string;
+  createdAt: string;
+  tag: string;
+};
